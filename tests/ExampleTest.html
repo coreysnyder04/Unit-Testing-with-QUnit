@@ -10,10 +10,27 @@
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
 <script>
+
+	module("Strings:");
 	test( "a basic test example", function() {
 		var value = "hello";
 		equal( value, "hello", "We expect value to be hello" );
 	});
+	test( "Test String Concat", function() {
+		var value = "Corey Snyder";
+		var string1 = "Corey ";
+		var string2 = "Snyder"
+		equal( value, string1 + string2, "We expect value to be 'Corey Snyder'" );
+	});
+
+	module("Numbers");
+	test( "a basic test example with numbers", function() {
+		var value = 4;
+		equal( value, 2+2, "We expect 2+2=4" );
+	});
+
+
+
 </script>
 </body>
 </html>
