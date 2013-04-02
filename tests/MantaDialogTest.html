@@ -31,6 +31,12 @@
 		</p>
 	</div>
 
+	<div id="TestDialog2" title="A simple test dialog2" style="display: none;">
+		<p>
+			This is a test dialog. It contains some content.
+		</p>
+	</div>
+
 
 	<!-- INSERT TESTS HERE -->
 	<script type="text/javascript">
@@ -55,6 +61,23 @@
 			showX: true
 		});
 
+		var TestDialog2 = new MantaDialog($("#TestDialog2"), {}, {
+			showRequired: false,
+			dialogClass: "CustomDialogClass",
+			showX: false,
+			modal: false,
+			buttons: [
+				{
+					text: 'Cancel',
+					btnClass: 'test2',
+					click: function() {
+						testObj.dialogCancel = true;
+						$(this.dialog).dialog("close"); return false;
+					}
+				}
+			]
+		});
+
 
 		/*########### END TEST DATA ###########*/
 
@@ -66,6 +89,9 @@
 
 
 		test("Verify Dialog is initialized correctly", function() {
+
+			expect(10);
+
 			$("#TestDialog1").dialog("open"); // Open Dialog
 			equal( $("#TestDialog1:visible").length , 1, "The dialog should visible" );
 
@@ -87,12 +113,37 @@
 
 			equal( $(".errorContainer", TestDialog1._parent).length, 1, "The Catch-all error node was added");
 
-			//$(".ui-icon-closethick", TestDialog1._parent).trigger("click"); //Click the close "X"
+			$(".ui-icon-closethick", TestDialog1._parent).trigger("click"); //Click the close "X"
 		});
 
+		test("Verify Dialog is initialized correctly (alternate config)", function() {
 
+			expect(10);
 
+			equal( typeof $("#TestDialog2").dialog , "function", "This item should be a jQuery Dialog object" );
 
+			$("#TestDialog2").dialog("open"); // Open Dialog
+			equal( $("#TestDialog2:visible").length , 1, "The dialog should visible" );
+
+			equal( $(".ui-dialog-title .uline", TestDialog2._parent).html().substr(0,21), "A simple test dialog2", "Check Dialog Title matches");
+
+			equal( $(".req_red_right:visible", TestDialog2._parent).length, 0, "The '* = required field' is NOT visible");
+
+			equal( $("button.cancel", TestDialog2._parent).length , 0, "There should be 1 button which has our custom class on it" );
+
+			equal( $(".ui-widget-overlay:visible").length, 0, "The Overlay should be not shown behind the dialog");
+
+			equal( $(".ui-icon-closethick", TestDialog2._parent).length, 1, "The Overlay should not include the close 'X'");
+
+			equal( $(TestDialog2._parent).hasClass("CustomDialogClass"), true, "The Dialog should have our custom class");
+
+			equal( $(".footerText", TestDialog2._parent).html(), "", "The custom footer text should NOT be present");
+
+			equal( $(".errorContainer", TestDialog2._parent).length, 1, "The Catch-all error node was added");
+
+			$(".ui-icon-closethick", TestDialog2._parent).trigger("click"); //Click the close "X"
+
+		});
 
 
 	</script>
