@@ -12,7 +12,7 @@
 	<!-- MANTA CSS -->
 
 	<!--- INCLUDE JS Files to test -->
-	<!--<script type="text/javascript" src="../code/pretty_date.js"></script>-->
+	<script type="text/javascript" src="../code/pretty_date.js"></script>
 
 
 </head>
@@ -30,6 +30,86 @@
 	/*
 		1360868696038 - Last Month
 	 */
+	var today = new Date();
+	var tDate = new Date();
+	var dates = {
+
+	};
+
+	dates.justNow = tDate.setSeconds( today.getSeconds() - 3 );
+	tDate = new Date();
+	dates.oneMinAgo = tDate.setMinutes( today.getMinutes() - 1  );
+	tDate = new Date();
+	dates.oneMin = tDate.setSeconds( today.getSeconds() + 61  );
+	tDate = new Date();
+	dates.minutes = tDate.setMinutes( today.getMinutes() + 13  );
+	tDate = new Date();
+	dates.minutesAgo = tDate.setMinutes( today.getMinutes() - 13  );
+	tDate = new Date();
+	dates.hour = tDate.setMinutes( today.getMinutes() + 61  );
+	tDate = new Date();
+	dates.hourAgo = tDate.setHours( today.getHours() - 1.5  );
+	tDate = new Date();
+	dates.yesterday = tDate.setDate( today.getDate() - 1  );
+	tDate = new Date();
+	dates.days = tDate.setDate( today.getDate() - 2  );
+	tDate = new Date();
+	dates.lastWeek = tDate.setDate( today.getDate() - 7  );
+	tDate = new Date();
+	dates.nextWeek = tDate.setDate( today.getDate() + 8  );
+	tDate = new Date();
+	dates.weeks = tDate.setDate( today.getDate()  + 22 );
+	tDate = new Date();
+	dates.weeksAgo = tDate.setDate( today.getDate() -14 );
+	tDate = new Date();
+	dates.lastMonth = tDate.setMonth( today.getMonth() - 1  );
+	tDate = new Date();
+	dates.nextMonth = tDate.setMonth( today.getMonth() + 1  );
+	tDate = new Date();
+	dates.months = tDate.setMonth( today.getMonth() + 3  );
+	tDate = new Date();
+	dates.monthsAgo = tDate.setMonth( today.getMonth() - 3  );
+	tDate = new Date();
+	dates.lastYear = tDate.setFullYear( today.getFullYear() - 1  );
+	tDate = new Date();
+	dates.nextYear = tDate.setFullYear( today.getFullYear() + 1  );
+	tDate = new Date();
+	dates.yearsAgo = tDate.setFullYear( today.getFullYear() - 13  );
+	tDate = new Date();
+	dates.years = tDate.setFullYear( today.getFullYear() + 34  );
+	tDate = new Date();
+	dates.lastCentury = tDate.setFullYear( today.getFullYear() - 110  );
+	tDate = new Date();
+	dates.centuries = tDate.setFullYear( today.getFullYear() + 250 );
+	tDate = new Date();
+	dates.centuriesAgo = tDate.setFullYear( today.getFullYear() - 250 );
+	console.log(dates);
+
+
+	console.log("justNow - ", prettyDate(dates['justNow']));
+	console.log("oneMinAgo - ", prettyDate(dates['oneMinAgo']));
+	console.log("oneMin - ", prettyDate(dates['oneMin']));
+	console.log("minutes - ", prettyDate(dates['minutes']));
+	console.log("minutesAgo - ", prettyDate(dates['minutesAgo']));
+	console.log("hour - ", prettyDate(dates['hour']));
+	console.log("hourAgo - ", prettyDate(dates['hourAgo']));
+	console.log("Yesterday - ", prettyDate(dates['yesterday']));
+	console.log("days - ", prettyDate(dates['days']));
+	console.log("lastWeek - ", prettyDate(dates['lastWeek']));
+	console.log("nextWeek - ", prettyDate(dates['nextWeek']));
+	console.log("weeks - ", prettyDate(dates['weeks']));
+	console.log("weeksAgo - ", prettyDate(dates['weeksAgo']));
+	console.log("lastMonth - ", prettyDate(dates['lastMonth']));
+	console.log("nextMonth - ", prettyDate(dates['nextMonth']));
+	console.log("months - ", prettyDate(dates['months']));
+	console.log("months ago - ", prettyDate(dates['monthsAgo']));
+	console.log("lastYear - ", prettyDate(dates['lastYear']));
+	console.log("years - ", prettyDate(dates['years']));
+	console.log("yearsAgo - ", prettyDate(dates['yearsAgo']));
+	console.log("lastCentury - ", prettyDate(dates['lastCentury']));
+	console.log("centuries - ", prettyDate(dates['centuries']));
+	console.log("centuriesAgo - ", prettyDate(dates['centuriesAgo']));
+
 
 	test( "Does function exist?", function() {
 		equal( 'function', typeof prettyDate, "We expect the prettyDate function to exist" );
