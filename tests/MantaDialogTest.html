@@ -66,9 +66,16 @@
 
 
 		test("Verify Dialog is initialized correctly", function() {
-			//$("#TestDialog1").dialog("open"); // Open Dialog
+			$("#TestDialog1").dialog("open"); // Open Dialog
 			equal( $("#TestDialog1:visible").length , 1, "The dialog should visible" );
+
+			equal( $(".ui-dialog-title .uline", TestDialog1._parent).html().substr(0,20), "INCORRECT TITLE", "Check Dialog Title matches");
+
+			$(".ui-icon-closethick", TestDialog1._parent).trigger("click"); //Click the close "X"
 		});
+
+
+
 
 
 
