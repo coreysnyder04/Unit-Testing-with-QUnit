@@ -145,6 +145,25 @@
 
 		});
 
+		test("Verify Custom Buttons work", function(){
+
+			$("#TestDialog1").dialog("open"); // Open Dialog
+			equal( $("#TestDialog1:visible").length , 1, "The dialog should visible" );
+
+			$("button.cancel", TestDialog1._parent).trigger("click"); //Click Close Button
+			equal( $("#TestDialog1:visible").length , 0, "The dialog should Closed" );
+
+			equal( testObj.dialogCancel, true, "Checks to see the buttons event was called." );
+
+			$("#TestDialog1").dialog("open"); // Open Dialog
+			equal( $("#TestDialog1:visible").length , 1, "The dialog should visible" );
+
+			$(".ui-icon-closethick", TestDialog1._parent).trigger("click"); //Click the close "X"
+			equal( $("#TestDialog1:visible").length , 0, "The dialog should Closed" );
+
+			$("#TestDialog1").dialog("open"); // Open Dialog
+		});
+
 
 	</script>
 
