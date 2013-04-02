@@ -36,6 +36,25 @@
 	<script type="text/javascript">
 
 		/************* BEGIN TEST DATA *********/
+		var testObj = {};
+
+		var TestDialog1 = new MantaDialog($("#TestDialog1"), {}, {
+			width: 400,
+			showRequired: true,
+			buttons: [
+				{
+					text: 'Cancel',
+					btnClass: 'cancel',
+					click: function() {
+						testObj.dialogCancel = true;
+						$(this.dialog).dialog("close"); return false;
+					}
+				}
+			],
+			footerText: "This is my footer text",
+			showX: true
+		});
+
 
 		/*########### END TEST DATA ###########*/
 
@@ -44,6 +63,13 @@
 		test( "Does function exist?", function() {
 			equal( 'function', typeof MantaDialog, "We expect the MantaDialog function to exist" );
 		});
+
+
+		test("Verify Dialog is initialized correctly", function() {
+			//$("#TestDialog1").dialog("open"); // Open Dialog
+			equal( $("#TestDialog1:visible").length , 1, "The dialog should visible" );
+		});
+
 
 
 	</script>
