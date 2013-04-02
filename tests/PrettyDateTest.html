@@ -115,6 +115,11 @@
 		equal( 'function', typeof prettyDate, "We expect the prettyDate function to exist" );
 	});
 
+	test( "Test 'just now'", function(){
+		equal( prettyDate(dates['justNow']), 'just now', "We expect prettyDate to return 'justNow'");
+	});
+
+
 
 </script>
 
