@@ -69,9 +69,25 @@
 			$("#TestDialog1").dialog("open"); // Open Dialog
 			equal( $("#TestDialog1:visible").length , 1, "The dialog should visible" );
 
-			equal( $(".ui-dialog-title .uline", TestDialog1._parent).html().substr(0,20), "INCORRECT TITLE", "Check Dialog Title matches");
+			equal( $(".ui-dialog-title .uline", TestDialog1._parent).html().substr(0,20), "A simple test dialog", "Check Dialog Title matches");
 
-			$(".ui-icon-closethick", TestDialog1._parent).trigger("click"); //Click the close "X"
+			equal( $(".req_red_right:visible", TestDialog1._parent).length, 1, "The '* = required field' is visible");
+
+			equal( $("button.cancel", TestDialog1._parent).length , 1, "There should be a button which has our custom class on it" );
+
+			equal( $(TestDialog1._parent).css("width"), "400px", "The dialog should be the correct width" );
+
+			equal( $(".ui-widget-overlay:visible").length, 1, "The Overlay should be shown behind the dialog");
+
+			equal( $(".ui-icon-closethick:visible", TestDialog1._parent).length, 1, "The Dialog should include the close 'X'");
+
+			equal( $(TestDialog1._parent).hasClass("manta-standard-dialog"), true, "The Dialog should have our custom class");
+
+			equal( $(".footerText", TestDialog1._parent).html(), "This is my footer text", "The custom footer text should be present");
+
+			equal( $(".errorContainer", TestDialog1._parent).length, 1, "The Catch-all error node was added");
+
+			//$(".ui-icon-closethick", TestDialog1._parent).trigger("click"); //Click the close "X"
 		});
 
 
