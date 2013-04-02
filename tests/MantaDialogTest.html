@@ -14,7 +14,6 @@
 	<link type="stylesheet" href="http://www.manta.com/manta/css/dialogs/manta_dialog.css" rel="stylesheet">
 
 	<!--- INCLUDE JS Files to test -->
-	<script type="text/javascript" src="../code/manta_dialog.js"></script>
 
 
 </head>
@@ -25,11 +24,25 @@
 
 	<!-- INSERT TEST HTML HERE -->
 
+	<div id="TestDialog1" title="A simple test dialog" style="display: none;">
+		<p>
+			This is a test dialog. It contains some content.
+		</p>
+	</div>
 
 
 	<!-- INSERT TESTS HERE -->
 	<script type="text/javascript">
 
+		/************* BEGIN TEST DATA *********/
+
+		/*########### END TEST DATA ###########*/
+
+
+		/******** BEGIN TESTS **************/
+		test( "Does function exist?", function() {
+			equal( 'function', typeof MantaDialog, "We expect the prettyDate function to exist" );
+		});
 
 
 	</script>
