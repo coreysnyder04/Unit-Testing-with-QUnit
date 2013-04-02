@@ -115,8 +115,84 @@
 		equal( 'function', typeof prettyDate, "We expect the prettyDate function to exist" );
 	});
 
-	test( "Test 'just now'", function(){
-		equal( prettyDate(dates['justNow']), 'just now', "We expect prettyDate to return 'justNow'");
+	test( "Test '1 minute ago'", function(){
+		equal( prettyDate(dates['oneMinAgo']), '1 minute ago', "We expect prettyDate to return '1 minute ago'");
+	});
+
+	test( "Test '1 minute from now'", function(){
+		equal( prettyDate(dates['oneMin']), '1 minute from now', "We expect prettyDate to return '1 minute from now'");
+	});
+
+	test( "Test '1 hour from now'", function(){
+		equal( prettyDate(dates['hour']), '1 hour from now', "We expect prettyDate to return '1 hour from now'");
+	});
+
+	test( "Test '2 hours ago'", function(){
+		equal( prettyDate(dates['hourAgo']), '2 hours ago', "We expect prettyDate to return '2 hours ago'");
+	});
+
+	test( "Test 'yesterday'", function(){
+		equal( prettyDate(dates['yesterday']), 'yesterday', "We expect prettyDate to return 'yesterday'");
+	});
+
+	test( "Test '2 days ago'", function(){
+		equal( prettyDate(dates['days']), '2 days ago', "We expect prettyDate to return '2 days ago'");
+	});
+
+	test( "Test 'last week'", function(){
+		equal( prettyDate(dates['lastWeek']), 'last week', "We expect prettyDate to return 'last week'");
+	});
+
+	test( "Test 'next week'", function(){
+		equal( prettyDate(dates['nextWeek']), 'next week', "We expect prettyDate to return 'next week'");
+	});
+
+	test( "Test '3 weeks from now'", function(){
+		equal( prettyDate(dates['weeks']), '3 weeks from now', "We expect prettyDate to return '3 weeks from now'");
+	});
+
+	test( "Test '2 weeks ago'", function(){
+		equal( prettyDate(dates['weeksAgo']), '2 weeks ago', "We expect prettyDate to return '2 weeks ago'");
+	});
+
+	test( "Test 'last month'", function(){
+		equal( prettyDate(dates['lastMonth']), 'last month', "We expect prettyDate to return 'last month'");
+	});
+
+	test( "Test 'next month'", function(){
+		equal( prettyDate(dates['nextMonth']), 'next month', "We expect prettyDate to return 'next month'");
+	});
+
+	test( "Test '3 months from now'", function(){
+		equal( prettyDate(dates['months']), '3 months from now', "We expect prettyDate to return '3 months from now'");
+	});
+
+	test( "Test '3 months ago'", function(){
+		equal( prettyDate(dates['monthsAgo']), '3 months ago', "We expect prettyDate to return '3 months ago'");
+	});
+
+	test( "Test 'last year'", function(){
+		equal( prettyDate(dates['lastYear']), 'last year', "We expect prettyDate to return 'last year'");
+	});
+
+	test( "Test '36 years from now'", function(){
+		equal( prettyDate(dates['years']), '36 years from now', "We expect prettyDate to return '36 years from now'");
+	});
+
+	test( "Test '14 years ago'", function(){
+		equal( prettyDate(dates['yearsAgo']), '14 years ago', "We expect prettyDate to return '14 years ago'");
+	});
+
+	test( "Test 'last century'", function(){
+		equal( prettyDate(dates['lastCentury']), 'last century', "We expect prettyDate to return 'last century'");
+	});
+
+	test( "Test '2 centuries from now'", function(){
+		equal( prettyDate(dates['centuries']), '2 centuries from now', "We expect prettyDate to return '2 centuries from now'");
+	});
+
+	test( "Test '2 centuries ago'", function(){
+		equal( prettyDate(dates['centuriesAgo']), '2 centuries ago', "We expect prettyDate to return '2 centuries ago'");
 	});
 
 
